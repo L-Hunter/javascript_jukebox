@@ -14,6 +14,7 @@
 // 4. Give the user the ability to load at least one different song into the Jukebox besides the one that is loaded when the page initially renders
 // The whole Jukebox should be backed by an object called Jukebox with methods to play, stop, and load songs.
 
+
 var Song = function(location, artist, title) {
 	this.location = location;
 	this.artist = artist;
@@ -22,13 +23,17 @@ var Song = function(location, artist, title) {
 
 var Player = function() {
 	this.songs = [];
+	this.audioPlayer = new Audio();
 	// this.songIndex = 0;
-
+	document.getElementById("play").addEventListener("click", this.play);
+	document.getElementById("stop").addEventListener("click", this.stop);
+	document.getElementById("next").addEventListener("click", this.nextSong);
+	
 	this.addSong = function(song) {
 		this.songs.push(song);
 	};
 
-	this.play = function(i) {
+	this.play = function() {
 		// Tell player object to play song path at this index in this.songs
 	};
 
