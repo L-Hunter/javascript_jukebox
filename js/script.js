@@ -22,29 +22,40 @@ var Song = function(location, artist, title) {
 };
 
 var Player = function() {
-	this.songs = [];
-	this.audioPlayer = new Audio();
+	var songs = [];
+	var audioPlayer = new Audio();
+	var currentSong = null;
 	// this.songIndex = 0;
-	document.getElementById("play").addEventListener("click", this.play);
-	document.getElementById("stop").addEventListener("click", this.stop);
-	document.getElementById("next").addEventListener("click", this.nextSong);
-	
+
+
 	this.addSong = function(song) {
-		this.songs.push(song);
+		if (!currentSong) {
+			currentSong = 0;
+		}
+		songs.push(song);
 	};
 
 	this.play = function() {
-		// Tell player object to play song path at this index in this.songs
+		audioPlayer.src = songs[currentSong].location;
+		audioPlayer.play();
+
 	};
 
 	this.stop = function() {
-		// tell player objet to stop
+		// tell player objet to stop or pause
 	};
 
 	this.nextSong = function() {
-
+		currentSong++;
+		audioPlayer.src = songs[currentSong].location;
+		audioPlayer.play();
 	}
-
+	var playButton = document.getElementById("play");
+	
+	playButton.addEventListener("click", this.play);
+	document.getElementById("stop").addEventListener("click", this.stop);
+	document.getElementById("next").addEventListener("click", this.nextSong);
+	
 };
 
 var jukebox = new Player();
