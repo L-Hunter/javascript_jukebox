@@ -48,7 +48,7 @@ var Player = function() {
 		audioPlayer.play();
 	};
 	
-	document.getElementById("play");.addEventListener("click", this.play);
+	document.getElementById("play").addEventListener("click", this.play);
 	document.getElementById("stop").addEventListener("click", this.stop);
 	document.getElementById("next").addEventListener("click", this.nextSong);
 	
