@@ -25,8 +25,6 @@ var Player = function() {
 	var songs = [];
 	var audioPlayer = new Audio();
 	var currentSong = null;
-	// this.songIndex = 0;
-
 
 	this.addSong = function(song) {
 		if (!currentSong) {
@@ -38,21 +36,19 @@ var Player = function() {
 	this.play = function() {
 		audioPlayer.src = songs[currentSong].location;
 		audioPlayer.play();
-
 	};
 
 	this.stop = function() {
-		// tell player objet to stop or pause
+		audioPlayer.src = "";
 	};
 
 	this.nextSong = function() {
 		currentSong++;
 		audioPlayer.src = songs[currentSong].location;
 		audioPlayer.play();
-	}
-	var playButton = document.getElementById("play");
+	};
 	
-	playButton.addEventListener("click", this.play);
+	document.getElementById("play");.addEventListener("click", this.play);
 	document.getElementById("stop").addEventListener("click", this.stop);
 	document.getElementById("next").addEventListener("click", this.nextSong);
 	
