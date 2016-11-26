@@ -1,11 +1,3 @@
-// from chris f
-// hint: jukebox.play
-// hint: html5 audio playback - this will have a default play button this assignment is asking us not to use that button
-// hint: need an array of song objects
-// hint: good time to practice github - make checklist of issues and then close them as you accomplish them
-
-// additional requirement: 10+ commits, 3+ branches, 2+ issues
-
 // 1. Display at least one song on the page when the page loads.
 // 2. Give the user the ability to play that song, without using the "built-in" play button. 
 // This could be through a different button, through clicking or mousing over an image on the page, or any other device of your choosing.
@@ -36,6 +28,7 @@ var Player = function() {
 	this.play = function() {
 		audioPlayer.src = songs[currentSong].location;
 		audioPlayer.play();
+		document.getElementById("song").innerText = songs[currentSong].title + " by " + songs[currentSong].artist;
 	};
 
 	this.stop = function() {
@@ -46,8 +39,10 @@ var Player = function() {
 		currentSong++;
 		audioPlayer.src = songs[currentSong].location;
 		audioPlayer.play();
+		document.getElementById("song").innerText = songs[currentSong].title + " by " + songs[currentSong].artist;
 	};
 	
+
 	document.getElementById("play").addEventListener("click", this.play);
 	document.getElementById("stop").addEventListener("click", this.stop);
 	document.getElementById("next").addEventListener("click", this.nextSong);
@@ -56,11 +51,11 @@ var Player = function() {
 
 var jukebox = new Player();
 
-var song1 = new Song("songs/Brubecktakefive.m4a", "Brubeck", "Take Five");
+var song1 = new Song("songs/Brubecktakefive.m4a", "Dave Brubeck", "Take Five");
 var song2 = new Song("songs/BSmywanderingdays.m4a", "Belle and Sebastian", "My Wandering Days Are Over");
 var song3 = new Song("songs/Foxygensanfrancisco.m4a", "Foxygen", "San Francisco");
-var song4 = new Song("songs/Guarldiginza.m4a", "Guaraldi", "Ginza");
-var song5 = new Song("songs/VUsundaymorning.m4a", "Velvet Underground", "Sunday Morning");
+var song4 = new Song("songs/Guarldiginza.m4a", "Vince Guaraldi", "Ginza");
+var song5 = new Song("songs/VUsundaymorning.m4a", "The Velvet Underground", "Sunday Morning");
 
 jukebox.addSong(song1);
 jukebox.addSong(song2);
