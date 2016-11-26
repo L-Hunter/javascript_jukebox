@@ -1,0 +1,42 @@
+body {
+	background-color: #E5FCC2;
+}
+
+#container {
+	background-color: #45ADA8;
+	width: 80%;
+	margin: 0 auto;
+	border: 3px solid #9DE0AD;
+	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	border-radius: 20px;
+}
+
+#song {
+	background-color: #547980;
+	padding: 15px;
+	text-align: center;
+	color: #E5FCC2;
+	margin: 0;
+}
+
+h1 {
+	background-color: #594F4F;
+	color: #9DE0AD;
+	text-align: center;
+	padding: 10px;
+	margin: 0;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+}
+
+#controls {
+	width: 80%;
+	margin: 0 auto;
+}
+
+#controls li {
+	display: inline-block;
+	width: 32.5%;
+}
