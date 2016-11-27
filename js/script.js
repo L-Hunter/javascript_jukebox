@@ -37,7 +37,9 @@ var Player = function() {
 
 	this.nextSong = function() {
 		currentSong++;
-		// loop to reset current song back to 0 if currentSong = songs.length
+		if (currentSong == songs.length) {
+			currentSong = 0;
+		};
 		audioPlayer.src = songs[currentSong].location;
 		audioPlayer.play();
 		document.getElementById("song").innerText = songs[currentSong].title + " by " + songs[currentSong].artist;
